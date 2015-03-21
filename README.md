@@ -13,24 +13,31 @@ The naming server of Nextra called Broker can keep track the applications' locat
 
 # Prerequisite
 OS: Linux. We tested on AWSÅFamzn1.x86_64
+
 Middleware: Nextra(broker & broklist). *) Provided in bin directory.
+
 Jar files: Download the following 2 jar files and placed in ./jar directory.
-    Apache log4j(We used log4j-1.2.17.jar).
-    MySQL Connector/J(We used mysql-connector-java-5.1.34-bin.jar)
+* Apache log4j(We used log4j-1.2.17.jar).
+* MySQL Connector/J(We used mysql-connector-java-5.1.34-bin.jar)
 
 # Environment setup
-Either placing broker & broklist in $PATH directory or set PATH to this bin directory.
+Either placing broker & broklist in $PATH directory or set this bin directory to $PATH.
 
 # Modify suit in your enviroment
 $vi broker.sh
+
 $vi client.sh
+
 $vi src/Processor.java  ... Modify SQL Engine listener port. Currently set as 5080.
 
 # Build this program
-./buildClient.sh
+$./buildClient.sh
 
 # Run this program
 $./broker.sh
+
 $./client.sh
 
-#Copyright (C) 1998 - 2015  Inspire International Inc.
+[Inspire International Inc.](http://www.inspire-intl.com/)
+
+#### Copyright (C) 1998 - 2015  Inspire International Inc.
