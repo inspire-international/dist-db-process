@@ -38,6 +38,6 @@ $./broker.sh
 
 $./client.sh
 
-[Inspire International Inc.](http://www.inspire-intl.com/)
+[Naming Serer Solution in the Cloud](http://www.inspire-intl.com/product/nextra/doc/namingServerSolution_en.pdf)
 
 #### Copyright (C) 1998 - 2015  Inspire International Inc.
