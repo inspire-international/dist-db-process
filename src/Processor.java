@@ -42,7 +42,7 @@ public class Processor {
         String[] command = null;
         int start = 0, end=0;
         int noOfRetry = 0;
-        final int maxNoOfRetry = 2; // # of attempt with different locations 
+        final int maxNoOfRetry = 2; // # of attempt with different locations
 
         for (int i=0; i<args.length; ++i) {
             if ("-host".equals(args[i])) {
@@ -97,17 +97,11 @@ public class Processor {
 
     private static class DBManager {
 
-        public static Connection getConnection() {
+        public static Connection getConnection() throws ClassNotFoundException, SQLException {
             Connection con = null;
-            try {
-                Class.forName(driverName);
-                con = DriverManager.getConnection(jdbcURL,user,password);
-                System.out.println("Connecting to <" + jdbcURL + ">");
-            } catch (ClassNotFoundException cnfe) {
-                System.err.println(cnfe.getMessage());
-            } catch (SQLException sqle) {
-                System.err.println(sqle.getMessage());
-            }
+            Class.forName(driverName);
+            con = DriverManager.getConnection(jdbcURL,user,password);
+            System.out.println("Connecting to <" + jdbcURL + ">");
             return con;
         }
     }
@@ -120,8 +114,8 @@ public class Processor {
         Connection con = null;
 
         Vector<String> datas = new Vector<String>();
-        con = DBManager.getConnection();
         try {
+            con = DBManager.getConnection();
             Statement stmt = (Statement) con.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             File file = new File(resultFile);
@@ -147,6 +141,9 @@ public class Processor {
         } catch (IOException ioe) {
             returnValue = FAIL + ioe.getMessage();
             System.err.println("IOError occured:" + ioe.getMessage());
+        } catch (ClassNotFoundException cnfe) {
+            returnValue = FAIL + cnfe.getMessage();
+            System.err.println("Class not found occured:" + cnfe.getMessage());
         } finally {
             try {
                 if (fw != null) fw.close();
