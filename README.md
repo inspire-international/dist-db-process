@@ -12,7 +12,7 @@ The naming server of Nextra called Broker can keep track the applications' locat
 4. Fetch all data entries in the specified table and generate them in a CSV file.
 
 # Prerequisite
-OS: Linux. We tested on AWSFamzn1.x86_64
+OS: Linux. We tested on AWS: amzn1.x86_64
 
 Middleware: Nextra(broker & broklist). *) Provided in bin directory.
 
@@ -32,6 +32,22 @@ $vi src/Processor.java  ... Modify SQL Engine listener port. Currently set as 50
 
 # Build this program
 $./buildClient.sh
+
+# Create broker.env
+$vi broker.env
+
+
+> DCE_BROKER=localhost,4445
+
+
+
+> DCE_DEBUGLEVEL=DEBUG,DEBUG
+
+
+
+> DCE_LOG=broker.log
+
+
 
 # Run this program
 $./broker.sh
