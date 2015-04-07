@@ -19,6 +19,8 @@ Middleware: Nextra(broker & broklist). *) Provided in bin directory.
 Jar files: Download the following 2 jar files and placed in ./jar directory.
 * Apache log4j(We used log4j-1.2.17.jar).
 * MySQL Connector/J(We used mysql-connector-java-5.1.34-bin.jar)
+* glibc >= 2.14 on which you run Broker from broker.sh
+> How to upgrade glibc to 2.14 is well described at http://kakakikikeke.blogspot.jp/2014/10/centosdrone.html
 
 # Environment setup
 Either placing broker & broklist in $PATH directory or set this bin directory to $PATH.
