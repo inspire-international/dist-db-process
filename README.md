@@ -11,6 +11,9 @@ The naming server of Nextra called Broker can keep track the applications' locat
 
 4. Fetch all data entries in the specified table and generate them in a CSV file.
 
+![Locate DB dynamically](http://www.inspire-intl.com/images/brokerAsNamingServer_en.jpg)
+
+
 # Prerequisite
 OS: Linux. We tested on AWS: amzn1.x86_64
 
